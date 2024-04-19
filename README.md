@@ -1,5 +1,5 @@
 # terraform-aws-vpcbatch5
-
+Create main.tf file and input following 
 ```hcl
 module "vpc" {
     source = "Munara241/vpcbatch5/aws"
@@ -10,6 +10,22 @@ module "vpc" {
     subnet3_cidr = "10.0.3.0/24"
     ip_on_launch = true
     instance_type = "t2.micro"
+    subnet1_name = "hello1"
+    subnet2_name = "hello2"
+    subnet3_name = "hello3"
+
+
 }
 
 ```
+
+Create apache.sh file an input a script. Eg.
+```hcl
+#!/bin/bash
+sudo apt update -y
+sudo apt install apache2 -y
+sudo systemctl start apache2
+sudo systemctl enable apache2
+
+```
+
